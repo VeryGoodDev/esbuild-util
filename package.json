@@ -5,6 +5,10 @@
   "author": "VeryGoodDev <very_good_dev@outlook.com>",
   "license": "MIT",
   "type": "module",
+  "exports": {
+    ".": null,
+    "./esbuild": "./src/esbuild/index.js"
+  },
   "files": [
     "src/*"
   ],
