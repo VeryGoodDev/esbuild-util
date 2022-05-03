@@ -2,6 +2,7 @@
   "name": "@vgd/util",
   "version": "0.1.0",
   "description": "Utilities I use for various projects",
+  "repository": "https://github.com/verygooddev/util",
   "author": "VeryGoodDev <very_good_dev@outlook.com>",
   "license": "MIT",
   "type": "module",
