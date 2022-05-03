@@ -5,6 +5,9 @@
   "author": "VeryGoodDev <very_good_dev@outlook.com>",
   "license": "MIT",
   "type": "module",
+  "files": [
+    "src/*"
+  ],
   "scripts": {},
   "dependencies": {
     "esbuild": "^0.14.38",
