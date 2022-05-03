@@ -41,12 +41,21 @@ const createBuildRunner =
 
 /**
  * @param {BuildOptions} config The config to base the build runner on
+ * @param {BuildOptionKey[]} requiredOverrides Any overrides that must be provided when calling the returned build runner. If there are any values provided in this array, the build runner will throw an error if it isn't called with an override config containing all of the required fields
  * @returns {DevServer}
  */
 const createDevServer =
-  (config) =>
-  (overrides = {}) =>
-    esbuild.serve({ host: `localhost`, port: 6969 }, combineConfigs(config, overrides))
+  (config, requiredOverrides = []) =>
+  (overrides = {}) => {
+    const missingOverrides = requiredOverrides.filter((key) => !(key in overrides))
+    if (missingOverrides.length > 0) {
+      const missingOverrideList = missingOverrides.join(`, `)
+      throw new Error(
+        `This build runner must be called with an override config containing the following fields: ${missingOverrideList}`
+      )
+    }
+    return esbuild.serve({ host: `localhost`, port: 6969 }, combineConfigs(config, overrides))
+  }
 
 /**
  * @param {number} startTime Timestamp of the starting point of the timeframe being measured
