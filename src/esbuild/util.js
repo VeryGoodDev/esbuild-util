@@ -1,4 +1,4 @@
-import esbuild from 'esbuild'
+const esbuild = require(`esbuild`)
 
 /**
  * @typedef {import('esbuild').BuildOptions} BuildOptions
@@ -70,4 +70,4 @@ const getTimeDiff = (startTime, precision = 2) => (performance.now() - startTime
  */
 const resolveToAbsolute = (path) => import.meta.resolve(path).then((resolved) => resolved.replace(/^file:\/\//, ``))
 
-export { createBuildRunner, createDevServer, getTimeDiff, resolveToAbsolute }
+module.exports = { createBuildRunner, createDevServer, getTimeDiff, resolveToAbsolute }
