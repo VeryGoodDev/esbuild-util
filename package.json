@@ -1,10 +1,11 @@
 {
-  "name": "@vgd/util",
-  "version": "0.2.1",
-  "description": "Utilities I use for various projects",
-  "repository": "https://github.com/verygooddev/util",
+  "name": "@vgd/esbuild-util",
+  "version": "0.1.0",
+  "description": "Convenience functions, helpers, etc. for all my esbuild needs",
+  "repository": "https://github.com/verygooddev/esbuild-util",
   "author": "VeryGoodDev <very_good_dev@outlook.com>",
   "license": "MIT",
+  "type": "module",
   "exports": {
     ".": null,
     "./esbuild": "./src/esbuild/index.js"
@@ -18,7 +19,7 @@
     "esbuild-plugin-alias": "^0.2.1"
   },
   "devDependencies": {
-    "@vgd/eslint-config-personal": "^0.5.1",
+    "@vgd/eslint-config-personal": "^0.6.3",
     "eslint": "^8.14.0",
     "typescript": "^4.6.3"
   }
