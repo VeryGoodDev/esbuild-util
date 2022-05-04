@@ -68,6 +68,8 @@ const getTimeDiff = (startTime, precision = 2) => (performance.now() - startTime
  * @param {string} path The module path to be resolved
  * @returns {Promise<string>}
  */
-const resolveToAbsolute = (path) => import.meta.resolve(path).then((resolved) => resolved.replace(/^file:\/\//, ``))
+const resolveToAbsolute = (path) => Promise.resolve(require.resolve(path))
+// TODO eventually when it's better supported, all my Node projects will use ESM and this will need to be updated to use this method instead
+// Const resolveToAbsolute = (path) => import.meta.resolve(path).then((resolved) => resolved.replace(/^file:\/\//, ``))
 
 module.exports = { createBuildRunner, createDevServer, getTimeDiff, resolveToAbsolute }
