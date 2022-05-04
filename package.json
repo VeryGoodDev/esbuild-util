@@ -1,6 +1,6 @@
 {
   "name": "@vgd/esbuild-util",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Convenience functions, helpers, etc. for all my esbuild needs",
   "repository": "https://github.com/verygooddev/esbuild-util",
   "author": "VeryGoodDev <very_good_dev@outlook.com>",
