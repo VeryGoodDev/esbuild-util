@@ -13,7 +13,6 @@ import { createBuildRunner, resolveToAbsolute } from './util.js'
 const getElectronBaseConfig = () => ({
   bundle: true,
   external: [`electron`],
-  format: `esm`,
   minify: true,
   outdir: `dist/electron`,
   platform: `node`,
