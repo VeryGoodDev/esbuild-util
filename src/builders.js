@@ -1,6 +1,6 @@
-import aliasPlugin from 'esbuild-plugin-alias'
+const aliasPlugin = require(`esbuild-plugin-alias`)
 
-import { createBuildRunner, resolveToAbsolute } from './util.js'
+const { createBuildRunner, resolveToAbsolute } = require(`./util.js`)
 
 /**
  * @typedef {import('esbuild').BuildOptions} BuildOptions
@@ -70,4 +70,4 @@ const getPreactBaseConfig = async () => ({
  */
 const getPreactBuildRunner = async () => createBuildRunner(await getPreactBaseConfig())
 
-export { getElectronBuildRunner, getPreactAliases, getPreactBuildRunner }
+module.exports = { getElectronBuildRunner, getPreactAliases, getPreactBuildRunner }
