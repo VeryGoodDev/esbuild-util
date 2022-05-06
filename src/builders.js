@@ -66,7 +66,7 @@ const getPreactBaseConfig = async () => ({
  * - the `watch` option is omitted by default, but can be provided in the override to add logging or any other functionality that may be useful on rebuild
  * - adding options not added by the default, such as `minify: true` for prod builds or `sourcemap: true` for dev builds, allows flexibility to re-use one build runner for multiple uses
  *
- * @returns {BuildRunner} A function that can be called to start a build
+ * @returns {Promise<BuildRunner>} A function that can be called to start a build
  */
 const getPreactBuildRunner = async () => createBuildRunner(await getPreactBaseConfig())
 
